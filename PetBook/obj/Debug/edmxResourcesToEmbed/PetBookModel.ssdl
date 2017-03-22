@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetBookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appointments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="IsFirstVisit" Type="bit" Nullable="false" />
+    <Property Name="VeterinarianId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VeterinarianId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Breed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Size" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="IsAggressive" Type="bit" Nullable="false" />
+    <Property Name="OnMed" Type="bit" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="VisitsPerYear" Type="int" Nullable="false" />
+    <Property Name="IsHealthy" Type="bit" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotesOfVisit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PetId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Veterinarians">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NameOfBusiness" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CustomerAppointment">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerPet">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Pets" Type="Self.Pets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pets">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PetProfile">
+    <End Role="Pets" Type="Self.Pets" Multiplicity="1" />
+    <End Role="Profiles" Type="Self.Profiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="PetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianAppointment">
+    <End Role="Veterinarians" Type="Self.Veterinarians" Multiplicity="1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarians">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianCustomer">
+    <End Role="Veterinarians" Type="Self.Veterinarians" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarians">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetBookModelStoreContainer">
+    <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pets" EntityType="Self.Pets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profiles" EntityType="Self.Profiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Veterinarians" EntityType="Self.Veterinarians" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CustomerAppointment" Association="Self.FK_CustomerAppointment">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerPet" Association="Self.FK_CustomerPet">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Pets" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PetProfile" Association="Self.FK_PetProfile">
+      <End Role="Pets" EntitySet="Pets" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianAppointment" Association="Self.FK_VeterinarianAppointment">
+      <End Role="Veterinarians" EntitySet="Veterinarians" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianCustomer" Association="Self.FK_VeterinarianCustomer">
+      <End Role="Veterinarians" EntitySet="Veterinarians" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

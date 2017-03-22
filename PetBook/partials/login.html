@@ -1,0 +1,27 @@
+<button class="btn btn-default" ng-click="open()">Login</button>
+
+
+<div ng-controller="loginController">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Please Login</h3>
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="input-group">
+                <span class="input-group-addon">Username:</span>
+                <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">Password:</span>
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">Sign In</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+
+</div>

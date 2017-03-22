@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PetBookModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="PetBookModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Veterinarians" EntityType="PetBookModel.Veterinarian" />
+    <EntitySet Name="Customers" EntityType="PetBookModel.Customer" />
+    <EntitySet Name="Pets" EntityType="PetBookModel.Pet" />
+    <EntitySet Name="Profiles" EntityType="PetBookModel.Profile" />
+    <EntitySet Name="Appointments" EntityType="PetBookModel.Appointment" />
+    <AssociationSet Name="VeterinarianCustomer" Association="PetBookModel.VeterinarianCustomer">
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="VeterinarianAppointment" Association="PetBookModel.VeterinarianAppointment">
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerAppointment" Association="PetBookModel.CustomerAppointment">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerPet" Association="PetBookModel.CustomerPet">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Pet" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="PetProfile" Association="PetBookModel.PetProfile">
+      <End Role="Pet" EntitySet="Pets" />
+      <End Role="Profile" EntitySet="Profiles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Veterinarian">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NameOfBusiness" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Customers" Relationship="PetBookModel.VeterinarianCustomer" FromRole="Veterinarian" ToRole="Customer" />
+    <NavigationProperty Name="Appointments" Relationship="PetBookModel.VeterinarianAppointment" FromRole="Veterinarian" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Veterinarian" Relationship="PetBookModel.VeterinarianCustomer" FromRole="Customer" ToRole="Veterinarian" />
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Appointments" Relationship="PetBookModel.CustomerAppointment" FromRole="Customer" ToRole="Appointment" />
+    <NavigationProperty Name="Pets" Relationship="PetBookModel.CustomerPet" FromRole="Customer" ToRole="Pet" />
+  </EntityType>
+  <EntityType Name="Pet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Breed" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Size" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Weight" Type="Int32" Nullable="false" />
+    <Property Name="IsAggressive" Type="Boolean" Nullable="false" />
+    <Property Name="OnMed" Type="Boolean" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VisitsPerYear" Type="Int32" Nullable="false" />
+    <Property Name="IsHealthy" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="PetBookModel.CustomerPet" FromRole="Pet" ToRole="Customer" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Profiles" Relationship="PetBookModel.PetProfile" FromRole="Pet" ToRole="Profile" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NotesOfVisit" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Pet" Relationship="PetBookModel.PetProfile" FromRole="Profile" ToRole="Pet" />
+    <Property Name="PetId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsFirstVisit" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Veterinarian" Relationship="PetBookModel.VeterinarianAppointment" FromRole="Appointment" ToRole="Veterinarian" />
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="PetBookModel.CustomerAppointment" FromRole="Appointment" ToRole="Customer" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="VeterinarianCustomer">
+    <End Type="PetBookModel.Veterinarian" Role="Veterinarian" Multiplicity="1" />
+    <End Type="PetBookModel.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarian">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VeterinarianAppointment">
+    <End Type="PetBookModel.Veterinarian" Role="Veterinarian" Multiplicity="1" />
+    <End Type="PetBookModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarian">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerAppointment">
+    <End Type="PetBookModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="PetBookModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerPet">
+    <End Type="PetBookModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="PetBookModel.Pet" Role="Pet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pet">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PetProfile">
+    <End Type="PetBookModel.Pet" Role="Pet" Multiplicity="1" />
+    <End Type="PetBookModel.Profile" Role="Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="PetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

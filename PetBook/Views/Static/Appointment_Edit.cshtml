@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Appointment</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Date" class = "control-label col-md-2"> Date </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Date" id="Date"  class="form-control"/>
+                    <div id="validation_for_Date"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsFirstVisit" class = "control-label col-md-2"> IsFirstVisit </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsFirstVisit" id="IsFirstVisit"  class="form-control"/>
+                    <div id="validation_for_IsFirstVisit"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="VeterinarianId" class = "control-label col-md-2"> Veterinarian </label>
+                <div class="col-md-10">
+                    <select ng-model="data.VeterinarianId" id="VeterinarianId"  class="form-control"
+                            ng-options="option.Id as option.Name for option in VeterinarianId_options">
+                        <option value="">-- choose Veterinarian --</option>
+                    </select>
+                    <div id="validation_for_VeterinarianId"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="CustomerId" class = "control-label col-md-2"> Customer </label>
+                <div class="col-md-10">
+                    <select ng-model="data.CustomerId" id="CustomerId"  class="form-control"
+                            ng-options="option.Id as option.Name for option in CustomerId_options">
+                        <option value="">-- choose Customer --</option>
+                    </select>
+                    <div id="validation_for_CustomerId"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Appointment">Back to List</a>
+    </div>

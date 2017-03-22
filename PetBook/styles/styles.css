@@ -1,0 +1,15 @@
+﻿.centerTextHeaders {
+    text-align: center;
+}
+
+.centerBlockDiv {
+    margin: auto;
+}
+
+.marginSpace {
+    margin: auto;
+}
+
+.paddingTop {
+    padding-top: 25px;
+}

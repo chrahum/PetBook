@@ -1,0 +1,84 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Customer</h2>
+    <p>
+        <a href="#/Customer/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Veterinarian
+            </th>
+            <th>
+                Appointments
+            </th>
+            <th>
+                Pets
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Name }}
+            </td>
+            <td>
+                {{ item.Address }}
+            </td>
+            <td>
+                {{ item.Age }}
+            </td>
+            <td>
+                {{ item.PhoneNumber }}
+            </td>
+            <td>
+                {{ item.Email }}
+            </td>
+            <td>
+                {{ item.Gender }}
+            </td>
+            <td>
+                    <a ng-href="#Veterinarian/{{item.VeterinarianId }}" >
+                    {{item.Veterinarian_Name}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Appointment?Customer={{item.Id }}" >
+                    {{item.Appointments_Count}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Pet?Customer={{item.Id }}" >
+                    {{item.Pets_Count}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Customer/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Customer/{{item.Id}}">Details</a> |
+                <a ng-href="#/Customer/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

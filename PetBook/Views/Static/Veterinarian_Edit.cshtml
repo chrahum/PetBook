@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Veterinarian</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2"> Name </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Name" id="Name"  class="form-control"/>
+                    <div id="validation_for_Name"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Address" class = "control-label col-md-2"> Address </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Address" id="Address"  class="form-control"/>
+                    <div id="validation_for_Address"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Age" class = "control-label col-md-2"> Age </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Age" id="Age"  class="form-control"/>
+                    <div id="validation_for_Age"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Gender" class = "control-label col-md-2"> Gender </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.Gender" id="Gender"  class="form-control"/>
+                    <div id="validation_for_Gender"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Location" class = "control-label col-md-2"> Location </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Location" id="Location"  class="form-control"/>
+                    <div id="validation_for_Location"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Email" class = "control-label col-md-2"> Email </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Email" id="Email"  class="form-control"/>
+                    <div id="validation_for_Email"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PhoneNumber" class = "control-label col-md-2"> PhoneNumber </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.PhoneNumber" id="PhoneNumber"  class="form-control"/>
+                    <div id="validation_for_PhoneNumber"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Username" class = "control-label col-md-2"> Username </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Username" id="Username"  class="form-control"/>
+                    <div id="validation_for_Username"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Password" class = "control-label col-md-2"> Password </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Password" id="Password"  class="form-control"/>
+                    <div id="validation_for_Password"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="NameOfBusiness" class = "control-label col-md-2"> NameOfBusiness </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.NameOfBusiness" id="NameOfBusiness"  class="form-control"/>
+                    <div id="validation_for_NameOfBusiness"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Veterinarian">Back to List</a>
+    </div>

@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Customer Details Test</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Address" class = "control-label col-md-2">
+                Address
+                </label>
+                <div class="col-md-10">
+                    {{data.Address}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Age" class = "control-label col-md-2">
+                Age
+                </label>
+                <div class="col-md-10">
+                    {{data.Age}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PhoneNumber" class = "control-label col-md-2">
+                PhoneNumber
+                </label>
+                <div class="col-md-10">
+                    {{data.PhoneNumber}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Email" class = "control-label col-md-2">
+                Email
+                </label>
+                <div class="col-md-10">
+                    {{data.Email}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Gender" class = "control-label col-md-2">
+                Gender
+                </label>
+                <div class="col-md-10">
+                    {{data.Gender}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Veterinarian" class = "control-label col-md-2">
+                 Veterinarian
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Veterinarian/{{Veterinarian }}" >
+                    {{data.Veterinarian_Name}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Appointments" class = "control-label col-md-2">
+                 Appointments
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Appointment?Customer={{data.Id }}" >
+                    {{data.Appointments_Count}}
+                    </a>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Pets" class = "control-label col-md-2">
+                 Pets
+                </label>
+                <div class="col-md-10">
+                    <a ng-href="#Pet?Customer={{data.Id }}" >
+                    {{data.Pets_Count}}
+                    </a>
+                </div>
+            </div>
+    
+           
+        </div>
+    
+    <div>
+        <a href="#/Customer">Back to List</a>
+    </div>

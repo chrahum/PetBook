@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="facfe1f0efbb4c2e857735a9a7872886" Name="Diagram1" >
+        <EntityTypeShape EntityType="PetBookModel.Veterinarian" Width="1.5" PointX="1.375" PointY="0.625" />
+        <EntityTypeShape EntityType="PetBookModel.Customer" Width="1.5" PointX="3.25" PointY="0.625" />
+        <EntityTypeShape EntityType="PetBookModel.Pet" Width="1.5" PointX="5.375" PointY="0.625" />
+        <EntityTypeShape EntityType="PetBookModel.Profile" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PetBookModel.Appointment" Width="1.5" PointX="2.5" PointY="4.75" />
+        <AssociationConnector Association="PetBookModel.VeterinarianCustomer" />
+        <AssociationConnector Association="PetBookModel.VeterinarianAppointment" />
+        <AssociationConnector Association="PetBookModel.CustomerAppointment" />
+        <AssociationConnector Association="PetBookModel.CustomerPet" />
+        <AssociationConnector Association="PetBookModel.PetProfile" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

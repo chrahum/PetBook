@@ -1,0 +1,38 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Profile</h2>
+    <p>
+        <a href="#/Profile/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                NotesOfVisit
+            </th>
+            <th>
+                Pet
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.NotesOfVisit }}
+            </td>
+            <td>
+                    <a ng-href="#Pet/{{item.PetId }}" >
+                    {{item.Pet_Name}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Profile/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Profile/{{item.Id}}">Details</a> |
+                <a ng-href="#/Profile/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

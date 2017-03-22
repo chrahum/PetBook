@@ -1,0 +1,125 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Pet</h2>
+    <form name="theForm">
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2"> Name </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Name" id="Name"  class="form-control"/>
+                    <div id="validation_for_Name"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Type" class = "control-label col-md-2"> Type </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Type" id="Type"  class="form-control"/>
+                    <div id="validation_for_Type"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Breed" class = "control-label col-md-2"> Breed </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Breed" id="Breed"  class="form-control"/>
+                    <div id="validation_for_Breed"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Age" class = "control-label col-md-2"> Age </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Age" id="Age"  class="form-control"/>
+                    <div id="validation_for_Age"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Size" class = "control-label col-md-2"> Size </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Size" id="Size"  class="form-control"/>
+                    <div id="validation_for_Size"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Weight" class = "control-label col-md-2"> Weight </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.Weight" id="Weight"  class="form-control"/>
+                    <div id="validation_for_Weight"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsAggressive" class = "control-label col-md-2"> IsAggressive </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsAggressive" id="IsAggressive"  class="form-control"/>
+                    <div id="validation_for_IsAggressive"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="OnMed" class = "control-label col-md-2"> OnMed </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.OnMed" id="OnMed"  class="form-control"/>
+                    <div id="validation_for_OnMed"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="StartDate" class = "control-label col-md-2"> StartDate </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.StartDate" id="StartDate"  class="form-control"/>
+                    <div id="validation_for_StartDate"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="VisitsPerYear" class = "control-label col-md-2"> VisitsPerYear </label>
+                <div class="col-md-10">
+                    <input type="text" ng-model="data.VisitsPerYear" id="VisitsPerYear"  class="form-control"/>
+                    <div id="validation_for_VisitsPerYear"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsHealthy" class = "control-label col-md-2"> IsHealthy </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.IsHealthy" id="IsHealthy"  class="form-control"/>
+                    <div id="validation_for_IsHealthy"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="CustomerId" class = "control-label col-md-2"> Customer </label>
+                <div class="col-md-10">
+                    <select ng-model="data.CustomerId" id="CustomerId"  class="form-control"
+                            ng-options="option.Id as option.Name for option in CustomerId_options">
+                        <option value="">-- choose Customer --</option>
+                    </select>
+                    <div id="validation_for_CustomerId"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Gender" class = "control-label col-md-2"> Gender </label>
+                <div class="col-md-10">
+                    <input type="checkbox" ng-model="data.Gender" id="Gender"  class="form-control"/>
+                    <div id="validation_for_Gender"></div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <div>
+        <a href="#/Pet">Back to List</a>
+    </div>

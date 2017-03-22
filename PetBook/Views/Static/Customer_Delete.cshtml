@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Customer</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Customer}}?
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Address" class = "control-label col-md-2">
+                Address
+                </label>
+                <div class="col-md-10">
+                    {{data.Address}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Age" class = "control-label col-md-2">
+                Age
+                </label>
+                <div class="col-md-10">
+                    {{data.Age}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="PhoneNumber" class = "control-label col-md-2">
+                PhoneNumber
+                </label>
+                <div class="col-md-10">
+                    {{data.PhoneNumber}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Email" class = "control-label col-md-2">
+                Email
+                </label>
+                <div class="col-md-10">
+                    {{data.Email}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Gender" class = "control-label col-md-2">
+                Gender
+                </label>
+                <div class="col-md-10">
+                    {{data.Gender}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Veterinarian" class = "control-label col-md-2">
+                 Veterinarian
+                </label>
+                <div class="col-md-10">
+                    {{data.Veterinarian_Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Appointments" class = "control-label col-md-2">
+                 Appointments
+                </label>
+                <div class="col-md-10">
+                    {{data.Appointments_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Pets" class = "control-label col-md-2">
+                 Pets
+                </label>
+                <div class="col-md-10">
+                    {{data.Pets_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/Customer">Back to List</a>
+    </div>

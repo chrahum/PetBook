@@ -1,0 +1,100 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Veterinarian</h2>
+    <p>
+        <a href="#/Veterinarian/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                NameOfBusiness
+            </th>
+            <th>
+                Customers
+            </th>
+            <th>
+                Appointments
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Name }}
+            </td>
+            <td>
+                {{ item.Address }}
+            </td>
+            <td>
+                {{ item.Age }}
+            </td>
+            <td>
+                {{ item.Gender }}
+            </td>
+            <td>
+                {{ item.Location }}
+            </td>
+            <td>
+                {{ item.Email }}
+            </td>
+            <td>
+                {{ item.PhoneNumber }}
+            </td>
+            <td>
+                {{ item.Username }}
+            </td>
+            <td>
+                {{ item.Password }}
+            </td>
+            <td>
+                {{ item.NameOfBusiness }}
+            </td>
+            <td>
+                    <a ng-href="#Customer?Veterinarian={{item.Id }}" >
+                    {{item.Customers_Count}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Appointment?Veterinarian={{item.Id }}" >
+                    {{item.Appointments_Count}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Veterinarian/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Veterinarian/{{item.Id}}">Details</a> |
+                <a ng-href="#/Veterinarian/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

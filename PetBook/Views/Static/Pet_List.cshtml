@@ -1,0 +1,112 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Pet</h2>
+    <p>
+        <a href="#/Pet/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Breed
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Size
+            </th>
+            <th>
+                Weight
+            </th>
+            <th>
+                IsAggressive
+            </th>
+            <th>
+                OnMed
+            </th>
+            <th>
+                StartDate
+            </th>
+            <th>
+                VisitsPerYear
+            </th>
+            <th>
+                IsHealthy
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Customer
+            </th>
+            <th>
+                Profiles
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Name }}
+            </td>
+            <td>
+                {{ item.Type }}
+            </td>
+            <td>
+                {{ item.Breed }}
+            </td>
+            <td>
+                {{ item.Age }}
+            </td>
+            <td>
+                {{ item.Size }}
+            </td>
+            <td>
+                {{ item.Weight }}
+            </td>
+            <td>
+                {{ item.IsAggressive }}
+            </td>
+            <td>
+                {{ item.OnMed }}
+            </td>
+            <td>
+                {{ item.StartDate }}
+            </td>
+            <td>
+                {{ item.VisitsPerYear }}
+            </td>
+            <td>
+                {{ item.IsHealthy }}
+            </td>
+            <td>
+                {{ item.Gender }}
+            </td>
+            <td>
+                    <a ng-href="#Customer/{{item.CustomerId }}" >
+                    {{item.Customer_Name}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Profile?Pet={{item.Id }}" >
+                    {{item.Profiles_Count}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Pet/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Pet/{{item.Id}}">Details</a> |
+                <a ng-href="#/Pet/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

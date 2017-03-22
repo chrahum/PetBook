@@ -1,0 +1,52 @@
+﻿    @{
+        Layout = null;
+    }
+    <h2>Appointment</h2>
+    <p>
+        <a href="#/Appointment/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                IsFirstVisit
+            </th>
+            <th>
+                Veterinarian
+            </th>
+            <th>
+                Customer
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in data">
+            <td>
+                {{ item.Date }}
+            </td>
+            <td>
+                {{ item.IsFirstVisit }}
+            </td>
+            <td>
+                    <a ng-href="#Veterinarian/{{item.VeterinarianId }}" >
+                    {{item.Veterinarian_Name}}
+                    </a>
+            </td>
+            <td>
+                    <a ng-href="#Customer/{{item.CustomerId }}" >
+                    {{item.Customer_Name}}
+                    </a>
+            </td>
+            <td>
+                <a ng-href="#/Appointment/Edit/{{item.Id}}">Edit</a> |
+                <a ng-href="#/Appointment/{{item.Id}}">Details</a> |
+                <a ng-href="#/Appointment/Delete/{{item.Id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    
+    </table>

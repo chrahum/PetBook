@@ -1,0 +1,143 @@
+﻿@{
+    Layout = null;
+}
+    <h2>Pet</h2>
+        <div class="form-horizontal">
+            <ul id="validationSummary"></ul>
+            Are you sure that you want to delete {{Pet}}?
+            <div class="form-group">
+                <label for="Name" class = "control-label col-md-2">
+                Name
+                </label>
+                <div class="col-md-10">
+                    {{data.Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Type" class = "control-label col-md-2">
+                Type
+                </label>
+                <div class="col-md-10">
+                    {{data.Type}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Breed" class = "control-label col-md-2">
+                Breed
+                </label>
+                <div class="col-md-10">
+                    {{data.Breed}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Age" class = "control-label col-md-2">
+                Age
+                </label>
+                <div class="col-md-10">
+                    {{data.Age}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Size" class = "control-label col-md-2">
+                Size
+                </label>
+                <div class="col-md-10">
+                    {{data.Size}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Weight" class = "control-label col-md-2">
+                Weight
+                </label>
+                <div class="col-md-10">
+                    {{data.Weight}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsAggressive" class = "control-label col-md-2">
+                IsAggressive
+                </label>
+                <div class="col-md-10">
+                    {{data.IsAggressive}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="OnMed" class = "control-label col-md-2">
+                OnMed
+                </label>
+                <div class="col-md-10">
+                    {{data.OnMed}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="StartDate" class = "control-label col-md-2">
+                StartDate
+                </label>
+                <div class="col-md-10">
+                    {{data.StartDate}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="VisitsPerYear" class = "control-label col-md-2">
+                VisitsPerYear
+                </label>
+                <div class="col-md-10">
+                    {{data.VisitsPerYear}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="IsHealthy" class = "control-label col-md-2">
+                IsHealthy
+                </label>
+                <div class="col-md-10">
+                    {{data.IsHealthy}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Gender" class = "control-label col-md-2">
+                Gender
+                </label>
+                <div class="col-md-10">
+                    {{data.Gender}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Customer" class = "control-label col-md-2">
+                 Customer
+                </label>
+                <div class="col-md-10">
+                    {{data.Customer_Name}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="Profiles" class = "control-label col-md-2">
+                 Profiles
+                </label>
+                <div class="col-md-10">
+                    {{data.Profiles_Count}}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" ng-click="save()" />
+                </div>
+            </div>
+        </div>
+    
+    <div>
+        <a href="#/Pet">Back to List</a>
+    </div>
